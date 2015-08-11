@@ -1,0 +1,3 @@
+# Vagrants
+
+Misc Vagrant boxes

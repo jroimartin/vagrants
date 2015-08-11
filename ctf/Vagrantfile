@@ -1,0 +1,19 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.define "ctf" do |ctf|
+    ctf.vm.box = "ubuntu/trusty64"
+  end
+
+  config.vm.define "ctf32" do |ctf32|
+    ctf32.vm.box = "ubuntu/trusty32"
+  end
+
+  config.ssh.forward_x11 = true
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "2048"
+  end
+
+  config.vm.provision "shell", path: "install.sh", privileged: false
+end
