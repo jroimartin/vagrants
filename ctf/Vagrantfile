@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-  config.vm.define "ctf" do |ctf|
+  config.vm.define "ctf", primary: true  do |ctf|
     ctf.vm.box = "ubuntu/trusty64"
   end
 
