@@ -7,13 +7,14 @@ curl -LSso ~/.vimrc https://raw.githubusercontent.com/jroimartin/dotfiles/master
 git clone https://github.com/fatih/vim-go.git ~/.vim/bundle/vim-go
 git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
 git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
 git clone https://go.googlesource.com/go ~/go1.4
 cd ~/go1.4 && git checkout release-branch.go1.4
 cd ~/go1.4/src && ./make.bash
 
 cp -R ~/go1.4 ~/go
-cd ~/go && git clean -dfx && git reset --hard && git checkout go1.7.3
+cd ~/go && git clean -dfx && git reset --hard && git checkout go1.7.4
 cd ~/go/src && ./make.bash
 
 mkdir -p ~/gocode
@@ -26,3 +27,5 @@ export PATH=$HOME/go/bin:$GOPATH/bin:$PATH
 export EDITOR=vim' >> ~/.profile
 
 curl -LSso ~/.gitconfig https://raw.githubusercontent.com/jroimartin/dotfiles/master/gitconfig
+
+curl -LSso ~/.dircolors https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-universal
