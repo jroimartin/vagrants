@@ -8,10 +8,6 @@ Vagrant.configure(2) do |config|
     vb.memory = "2048"
   end
 
-  # IMPORTANT: vagrant reload needed
-  config.ssh.forward_env = ["ITERM_PROFILE"]
-  config.vm.provision "shell", inline: %q(sed -E -i 's/^AcceptEnv/AcceptEnv ITERM_PROFILE/' /etc/ssh/sshd_config)
-
   config.vm.provision "shell", path: "installdeps.sh"
   config.vm.provision "shell", path: "installgo.sh", privileged: false
 end
