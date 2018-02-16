@@ -1,12 +1,9 @@
 #!/bin/bash
 set -e
 
-# default folders
-mkdir -p $HOME/src $HOME/work
-
 # dependencies
 sudo apt-get update
-sudo apt-get install -y --no-install-recommends curl git build-essential gdb python python-pip libpython-dev
+sudo apt-get install -y --no-install-recommends curl git build-essential
 
 # tmux
 curl -LSso $HOME/.tmux.conf https://raw.githubusercontent.com/jroimartin/dotfiles/master/tmux18.conf
@@ -29,10 +26,3 @@ GOPATH=$HOME/gocode ~/go/bin/go get golang.org/x/tools/cmd/...
 echo 'export GOPATH=$HOME/gocode
 export PATH=$HOME/go/bin:$GOPATH/bin:$PATH
 export EDITOR=vim' >> ~/.profile
-
-# radare2
-git clone https://github.com/radare/radare2.git ~/src/radare2
-cd ~/src/radare2 && ./sys/install.sh
-
-# gdb
-echo "set disassembly-flavor intel" > ~/.gdbinit

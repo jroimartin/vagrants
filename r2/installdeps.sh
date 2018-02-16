@@ -5,12 +5,9 @@ sudo apt-get update
 sudo apt-get install -y --no-install-recommends curl git build-essential
 sudo apt-get clean
 
-mkdir -p ~/.vim/autoload ~/.vim/bundle
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-curl -LSso ~/.vimrc https://raw.githubusercontent.com/jroimartin/dotfiles/master/vimrc
-git clone https://github.com/ctrlpvim/ctrlp.vim.git ~/.vim/bundle/ctrlp.vim
-git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive
+curl -LSso $HOME/.vimrc https://raw.githubusercontent.com/jroimartin/dotfiles/master/vimrc
 
-echo 'export EDITOR=vim' >> ~/.profile
+curl -LSso $HOME/.tmux.conf https://raw.githubusercontent.com/jroimartin/dotfiles/master/tmux18.conf
+echo 'export EDITOR=vim' >> $HOME/.profile
 
-curl -LSso ~/.gitconfig https://raw.githubusercontent.com/jroimartin/dotfiles/master/gitconfig
+curl -LSso $HOME/.gitconfig https://raw.githubusercontent.com/jroimartin/dotfiles/master/gitconfig
